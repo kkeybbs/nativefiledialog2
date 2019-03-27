@@ -3,7 +3,8 @@ matrix:
     - language: c
       os: windows
       script:
-        - cd build/vs2010
+        - cd build
+        - cd vs2010
         - msbuild /p:Configuration="Release|x64" NativeFileDialog.sln
 
     - language: c
