@@ -3,11 +3,13 @@ matrix:
     - language: c
       os: windows
       script:
-        - cd build\vs2010
+        - cd build/vs2010
         - msbuild /p:Configuration="Release|x64" NativeFileDialog.sln
 
     - language: c
       os: linux
+      before_install:
+        - sudo apt-get install -y libgtk-3-dev
       script:
         - cd build/gmake_linux
         - make config=release_x64
@@ -17,3 +19,7 @@ matrix:
       script:
         - cd build/gmake_macosx
         - make config=release_x64
+      # branches:
+      #   only:
+      #     - devel
+      #     - master
