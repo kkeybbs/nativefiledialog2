@@ -1,0 +1,19 @@
+matrix:
+  include:
+    - language: c
+      os: windows
+      script:
+        - cd build\vs2010
+        - msbuild /p:Configuration="Release|x64" NativeFileDialog.sln
+
+    - language: c
+      os: linux
+      script:
+        - cd build/gmake_linux
+        - make config=release_x64
+
+    - language: objective_c
+      os: osx
+      script:
+        - cd build/gmake_macosx
+        - make config=release_x64
