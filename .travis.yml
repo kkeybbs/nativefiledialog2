@@ -2,23 +2,25 @@ matrix:
   include:
     - language: c
       os: windows
+      before_install:
+        - cd build/vs2010
+      # before_script: cd build/vs2010
       script:
-        - cd build
-        - cd vs2010
         - msbuild /p:Configuration="Release|x64" NativeFileDialog.sln
 
     - language: c
       os: linux
       before_install:
         - sudo apt-get install -y libgtk-3-dev
-      script:
         - cd build/gmake_linux
+      script:
         - make config=release_x64
 
     - language: objective_c
       os: osx
-      script:
+      before_install:
         - cd build/gmake_macosx
+      script:
         - make config=release_x64
       # branches:
       #   only:
