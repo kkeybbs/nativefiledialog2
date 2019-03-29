@@ -8,7 +8,7 @@ matrix:
         - cd build/vs2010
       # before_script: cd build/vs2010
       script:
-        - export PATH=$MSBUILD_PATH:$PATH
+        - export PATH="$MSBUILD_PATH:$PATH"
         - msbuild /p:Configuration="Release|x64" NativeFileDialog.sln
 
     - language: c
