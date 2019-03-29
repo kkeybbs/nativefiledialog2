@@ -2,13 +2,11 @@ matrix:
   include:
     - language: c
       os: windows
-      env:
-        - "PATH=$PATH:$TRAVIS_BUILD_DIR/bin"
       before_install:
         - cd build/vs2010
       # before_script: cd build/vs2010
       script:
-        - msbuild /p:Configuration="Release|x64" NativeFileDialog.sln
+        - C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe /p:Configuration="Release|x64" NativeFileDialog.sln
 
     - language: c
       os: linux
