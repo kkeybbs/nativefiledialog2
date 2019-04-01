@@ -4,12 +4,9 @@ matrix:
       os: windows
       env:
         - MSBUILD_PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin"
-      before_install:
-        - cd build/vs2010
-      # before_script: cd build/vs2010
       script:
         - export PATH=$MSBUILD_PATH:$PATH
-        - msbuild /nologo /verbosity:quiet /p:Configuration="Release|x64" NativeFileDialog.sln
+        - ./build.bat
 
     - language: c
       os: linux
