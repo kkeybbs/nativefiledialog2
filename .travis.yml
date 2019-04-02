@@ -26,3 +26,12 @@ matrix:
       #   only:
       #     - devel
       #     - master
+deploy:
+  provider: releases
+  api_key:
+    secure: "hL4BSoPbWo3MLladBLj9VZYKXuDb2XKZX4KVKCs2P6aHiijJ8qpTukOYadDckGfG8ASLMdxnJOCX9VbjeR4IH8XwXM9EXEqKdRYqMIPHBt+vFjJPXM3z4TVUCKz73bRv5hZXvTSuzgnC5EdPe0+kiAQdOFWoWtA+BH6IXLMxux7qP16HnlutgVEvyBkkmchhZS60WpVHrrnWNb7l+gIMBDyLWGrWpYJ3Cyo01IOP6Zjog4lvwDBb+BjoCJpBlsrFVGwe0hYk9wpUtvgIU92EFepffQ7wQp1AEK5PjMw0LVIcnQ9PsyHp59rC6XNfItSQ04C91Von9LJQlnOOIZUqaorvwCwQXfqUlbsCNTM6nJ/YykFHIMNEH4tHeDihKR7ufmxfZyDzizWWBaoBy+TyHKhPHeSlgJq7b76sP0ZqR0U3Eyw9qO4uWEUI5FsuEKwFK0fJnF9JVyghGhwJn5yGcMeWY1OD6HOMZ9QmuSBpNmBvQItBnuJ9Df0fM3OHnTsAxECaWG77KNU+9wte76iFc3l5IL054zEE4FGRCYWM8+RXqtMfWKFv3lBz+NyWqRyFW06XEgDBsAPNjAvBCSeBnIMFf8E7Yc3w2Rbp8No1QWfu7siErQkCe5iaJXp8I0Qa78YcAEb9yiz/y9Y0Dv5aDLTBy/G9vDH6/iEMwoKCOJc="
+  file_glob: true
+  file: build/bin/*
+  skip_cleanup: true
+  on:
+    tags: true
